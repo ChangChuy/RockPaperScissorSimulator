@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://j10pfv7srym1"]
+
+[ext_resource type="Script" path="res://game.gd" id="1_8gcke"]
+
+[sub_resource type="Curve2D" id="Curve2D_nei17"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 226, 331, 0, 0, 0, 0, 230, 1368, 0, 0, 0, 0, 384, 1384, 0, 0, 0, 0, 386, 349, 0, 0, 0, 0, 232, 333, 0, 0, 0, 0, 226, 331)
+}
+point_count = 6
+
+[sub_resource type="Curve2D" id="Curve2D_smw2r"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 872, 281, 0, 0, 0, 0, 905, 580, 0, 0, 0, 0, 1418, 607, 0, 0, 0, 0, 1432, 304, 0, 0, 0, 0, 872, 281)
+}
+point_count = 5
+
+[sub_resource type="Curve2D" id="Curve2D_g302i"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1026, 1276, 0, 0, 0, 0, 1081, 1623, 0, 0, 0, 0, 1600, 1610, 0, 0, 0, 0, 1590, 1249, 0, 0, 0, 0, 1026, 1276)
+}
+point_count = 5
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_8gcke")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1977.0
+offset_bottom = 1926.0
+
+[node name="Paper" type="Path2D" parent="."]
+curve = SubResource("Curve2D_nei17")
+
+[node name="PaperPath" type="PathFollow2D" parent="Paper"]
+unique_name_in_owner = true
+position = Vector2(226, 331)
+rotation = 1.56694
+
+[node name="Rock" type="Path2D" parent="."]
+curve = SubResource("Curve2D_smw2r")
+
+[node name="RockPath" type="PathFollow2D" parent="Rock"]
+unique_name_in_owner = true
+position = Vector2(872, 281)
+rotation = 1.46087
+
+[node name="Scissors" type="Path2D" parent="."]
+curve = SubResource("Curve2D_g302i")
+
+[node name="ScissorsPath" type="PathFollow2D" parent="Scissors"]
+unique_name_in_owner = true
+position = Vector2(1026, 1276)
+rotation = 1.4136
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

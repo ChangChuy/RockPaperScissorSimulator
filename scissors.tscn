@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://db81la0u018kl"]
+
+[ext_resource type="Texture2D" uid="uid://bwf4d5v2jg6rd" path="res://scissor.png" id="1_3f0dc"]
+[ext_resource type="Script" path="res://scissors.gd" id="1_8ndbg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h7e4r"]
+size = Vector2(34, 35)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4xgxl"]
+size = Vector2(40, 41)
+
+[node name="Scissors" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 0
+script = ExtResource("1_8ndbg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.0698242, 0.0698242)
+texture = ExtResource("1_3f0dc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_h7e4r")
+
+[node name="Transform" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transform"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_4xgxl")
+debug_color = Color(0.980392, 0.109804, 0.227451, 0.419608)

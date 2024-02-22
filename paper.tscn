@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccxgod5q6c7gu"]
+
+[ext_resource type="Script" path="res://paper.gd" id="1_w2hwk"]
+[ext_resource type="Texture2D" uid="uid://cbhm6ylfcc6l8" path="res://file.png" id="1_ydbg1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7sn5"]
+size = Vector2(20, 28)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pugk4"]
+size = Vector2(24, 32)
+
+[node name="Paper" type="CharacterBody2D"]
+collision_mask = 0
+script = ExtResource("1_w2hwk")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 2.38419e-07)
+scale = Vector2(0.046875, 0.0582387)
+texture = ExtResource("1_ydbg1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_k7sn5")
+
+[node name="Transform" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transform"]
+shape = SubResource("RectangleShape2D_pugk4")
+debug_color = Color(0.980392, 0.109804, 0.227451, 0.419608)
