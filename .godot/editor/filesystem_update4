@@ -1,5 +1,7 @@
 res://get_input.tscn
-res://game.tscn
+res://paper.gd
+res://rock.gd
 res://paper.tscn
-res://rock.tscn
+res://game.tscn
 res://scissors.tscn
+res://rock.tscn

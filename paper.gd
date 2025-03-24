@@ -8,7 +8,7 @@ func _physics_process(delta):
 	find_closest_rock()
 	var transform_scissor = %Transform.get_overlapping_bodies()
 	if transform_scissor.size() > 0: 
-		var new_scissor = preload("res://scissors.tscn").instantiate()
+		var new_scissor = load("res://scissors.tscn").instantiate()
 		#var static_rock = preload("res://rock.tscn").instantiate()
 		new_scissor.global_position = global_position
 		get_parent().add_child(new_scissor)
@@ -43,7 +43,4 @@ func set_rocks(rock_list):
 	rocks = rock_list
 
 func add_new_rock(rock):
-	print(rocks)
 	rocks.append(rock)
-	print(rocks)
-

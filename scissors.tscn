@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://db81la0u018kl"]
 
 [ext_resource type="Texture2D" uid="uid://bwf4d5v2jg6rd" path="res://scissor.png" id="1_3f0dc"]
-[ext_resource type="Script" path="res://scissors.gd" id="1_8ndbg"]
+[ext_resource type="Script" uid="uid://d4ndoe3sgtvlm" path="res://scissors.gd" id="1_8ndbg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7e4r"]
 size = Vector2(34, 35)
